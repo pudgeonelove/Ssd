@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Математика — ШколаХаб</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="back-link" href="index.html">← <span data-i18n="back">Все предметы</span></a>
+    <div class="brand">📐 Математика</div>
+    <div class="lang-toggle">
+      <button data-lang="ru">RU</button>
+      <button data-lang="ky">KY</button>
+    </div>
+  </header>
+
+  <div class="topic-row">
+    <button class="topic-btn active" data-topic="linear">📈 <span data-i18n="topicLinear">Линейная функция</span></button>
+    <button class="topic-btn" data-topic="quadratic">🧮 <span data-i18n="topicQuadratic">Квадратичная функция</span></button>
+  </div>
+  <p class="coverage-note" data-i18n="mathHint" style="text-align:left; padding:0 24px; max-width:1200px; margin:0 auto 14px"></p>
+
+  <section class="section active" id="section-linear">
+    <div class="math-wrap">
+      <div class="graph-stage">
+        <svg id="svgLinear" viewBox="0 0 400 400"></svg>
+        <div class="sliders">
+          <div class="slider-row"><label>k</label><input type="range" id="kSlider" min="-5" max="5" step="0.1" value="1"><span class="val" id="kVal">1</span></div>
+          <div class="slider-row"><label>b</label><input type="range" id="bSlider" min="-10" max="10" step="0.5" value="0"><span class="val" id="bVal">0</span></div>
+        </div>
+        <div class="point-readout" id="linearPoint"></div>
+      </div>
+      <div class="math-panel">
+        <div class="formula-box" id="linearFormula">y = x</div>
+        <div class="fact"><span data-i18n="slopeLabel">Угловой коэффициент</span><span id="linearSlope"></span></div>
+        <div class="fact"><span data-i18n="interceptLabel">Пересечение с Y</span><span id="linearIntercept"></span></div>
+        <div class="fact"><span data-i18n="rootLabel">Корень (y=0)</span><span id="linearRoot"></span></div>
+        <div class="desc-toggle" style="margin-top:16px">
+          <button class="active" id="linBriefBtn"></button>
+          <button id="linFullBtn"></button>
+        </div>
+        <p class="country-desc" id="linearText"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="section-quadratic">
+    <div class="math-wrap">
+      <div class="graph-stage">
+        <svg id="svgQuad" viewBox="0 0 400 400"></svg>
+        <div class="sliders">
+          <div class="slider-row"><label>a</label><input type="range" id="aSlider" min="-3" max="3" step="0.1" value="1"><span class="val" id="aVal">1</span></div>
+          <div class="slider-row"><label>b</label><input type="range" id="qbSlider" min="-10" max="10" step="0.5" value="0"><span class="val" id="qbVal">0</span></div>
+          <div class="slider-row"><label>c</label><input type="range" id="cSlider" min="-10" max="10" step="0.5" value="0"><span class="val" id="cVal">0</span></div>
+        </div>
+        <div class="point-readout" id="quadPoint"></div>
+      </div>
+      <div class="math-panel">
+        <div class="formula-box" id="quadFormula">y = x²</div>
+        <div class="fact"><span data-i18n="discLabel">Дискриминант</span><span id="quadDisc"></span></div>
+        <div class="fact"><span data-i18n="rootsLabel">Корни</span><span id="quadRoots"></span></div>
+        <div class="fact"><span data-i18n="vertexLabel">Вершина параболы</span><span id="quadVertex"></span></div>
+        <div class="fact"><span data-i18n="axisLabel">Ось симметрии</span><span id="quadAxis"></span></div>
+        <div class="desc-toggle" style="margin-top:16px">
+          <button class="active" id="quadBriefBtn"></button>
+          <button id="quadFullBtn"></button>
+        </div>
+        <p class="country-desc" id="quadText"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer data-i18n="footer"></footer>
+
+<script src="i18n.js"></script>
+<script src="math.js"></script>
+</body>
+</html>

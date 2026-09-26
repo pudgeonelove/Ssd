@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>География — ШколаХаб</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="back-link" href="index.html">← <span data-i18n="back">Все предметы</span></a>
+    <div class="brand">🌍 География</div>
+    <div class="lang-toggle">
+      <button data-lang="ru">RU</button>
+      <button data-lang="ky">KY</button>
+    </div>
+  </header>
+
+  <div class="topic-row">
+    <button class="topic-btn active" data-topic="countries">🌐 <span data-i18n="topicCountries">Страны мира</span></button>
+    <button class="topic-btn" data-topic="continents">🗺️ <span data-i18n="topicContinents">Материки и океаны</span></button>
+  </div>
+
+  <section class="section active" id="section-countries">
+    <div class="globe-wrap">
+      <div class="globe-stage" id="globeStage">
+        <div class="globe-hint" data-i18n="globeHint">Крутите глобус</div>
+      </div>
+      <p class="coverage-note" data-i18n="countriesCoverageNote"></p>
+      <div class="info-panel" id="infoPanel"></div>
+    </div>
+  </section>
+
+  <section class="section" id="section-continents">
+    <div class="panel">
+      <p id="continentsIntro"></p>
+      <div class="desc-toggle">
+        <button class="active" id="contBriefBtn"></button>
+        <button id="contFullBtn"></button>
+      </div>
+      <p id="continentsText"></p>
+      <table>
+        <thead><tr>
+          <th id="thContinent"></th><th id="thArea"></th><th id="thPop"></th><th id="thCountries"></th>
+        </tr></thead>
+        <tbody id="continentsBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer data-i18n="footer"></footer>
+
+<script src="i18n.js"></script>
+<script src="countries-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="globe.js"></script>
+<script src="geography.js"></script>
+</body>
+</html>
